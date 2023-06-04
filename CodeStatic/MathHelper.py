@@ -1,4 +1,5 @@
 import numpy as np
+import math
 
 def Derivative(f,x):
     eps = pow(10,20)
@@ -59,3 +60,15 @@ def Gauss(a,b):
         b[k] = (b[k] - np.dot(a[k][k+1:n],b[k+1:n]))/a[k][k]
     
     return b
+
+def Integrate2D(f,a,b,c,d):
+    x = [ -math.sqrt(3.0 / 5.0), 0, math.sqrt(3.0 / 5.0) ]
+    weights = [ 5.0 / 9.0, 8.0 / 9.0, 5.0 / 9.0];
+    jacobian = (b - a) * (d - c) / 4;
+
+    res = 0;
+    for i in range(0,len(x)):
+        for j in range(0,len(x)):
+            res += f(a + (1 + x[i]) *((b - a) / 2), c + (1 + x[j]) * ((d - c) / 2)) * weights[i] * weights[j] * jacobian
+
+    return res

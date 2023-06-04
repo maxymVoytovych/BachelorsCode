@@ -1,6 +1,6 @@
 class CourantFunctions:
     
-    def __init__(self,I=0,NOFE=10,L=1.0):
+    def __init__(self,I=0,NOFE=10,L=0.01):
         self.i = I
         self.NumberOfFiniteElements = NOFE
         self.Length = L
