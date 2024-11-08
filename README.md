@@ -1,2 +1,2 @@
-# MastersCode
-code for masters thesis
+# Bachelors code
+code for bachelors thesis
